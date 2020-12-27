@@ -11,7 +11,6 @@ function firstUniqueCharacter(testStrg){
   let ledger = {}
   for(let i=0;i<testStrg.length;i++){
     if(!ledger[testStrg[i]]){
-      const item = testStrg[i];
       ledger[testStrg[i]] = 1
     }
     else if(ledger[testStrg[i]]){
