@@ -15,7 +15,6 @@ class DoublyLinkedList {
         next: null,
         prev: null
       }
-      console.log(newNode)
       newNode.prev = this.tail
       this.tail.next = newNode;
       this.tail = newNode;
@@ -61,7 +60,6 @@ class DoublyLinkedList {
       newNode.next = follower;
       follower.prev = newNode;
       this.length++;
-      console.log(this)
       return this.printList();
     }
     traverseToIndex(index) {
@@ -81,10 +79,11 @@ class DoublyLinkedList {
   myLinkedList.append(16)
   myLinkedList.prepend(1)
   myLinkedList.insert(2, 99)
-  // myLinkedList.insert(20, 88)
-  // myLinkedList.printList()
-  // myLinkedList.remove(2)
-  // myLinkedList.reverse()
+  myLinkedList.insert(20, 88)
+  console.log(myLinkedList);
+  console.log(myLinkedList.printList())
+
+
   
   
   
