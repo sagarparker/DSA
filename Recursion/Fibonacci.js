@@ -5,6 +5,10 @@
 
 //For example: fibonacciRecursive(6) should return 8
 
+
+
+// Iterative approach
+
 function fibonacciIterative(n){
     let arr = [0,1];
 
@@ -21,13 +25,42 @@ function fibonacciIterative(n){
   
 console.log(fibonacciIterative(3));
   
+
+
+// Recursvie Approach
+
 function fibonacciRecursive(n) {
     if(n < 2){
         return n;
     }
-
     return fibonacciRecursive(n-1) + fibonacciRecursive(n-2);
-
 } 
-  
+
 console.log(fibonacciRecursive(3));
+
+
+
+// DP + recursive approach
+
+function fibonacciRecursiveWithDP(){
+    let cache = {}
+    return function fib(n){
+        if(n in cache){
+            return cache[n];
+        }
+        else{
+            if(n<2){
+                return n;
+            }
+            else{
+                cache[n] = fib(n-1) +fib(n-2);
+                return cache[n];
+            }
+        }
+    }
+}
+
+const memoize = fibonacciRecursiveWithDP();
+
+console.log(memoize(3));
+  
